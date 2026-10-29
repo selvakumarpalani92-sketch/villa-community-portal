@@ -1,0 +1,1889 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>VGN Pride De Villa Owners Association</title>
+
+<style>
+
+body{
+    font-family:Arial,sans-serif;
+    background:#e8f5e9; /* Soft Light Green */
+    margin:0;
+    padding:20px;
+}
+
+.card{
+
+    width:98%;
+    max-width:1800px;
+    margin:30px auto;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.banner{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+h2{
+    text-align:center;
+}
+
+
+input[type=text],
+input[type=password],
+input[type=number]{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    margin-bottom:10px;
+    box-sizing:border-box;
+}
+
+button{
+    background:#0d47a1;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#08306b;
+}
+
+.logout{
+    background:red;
+    position:fixed;
+    top:15px;
+    right:15px;
+    z-index:9999;
+
+}
+
+.roleGroup{
+    display:flex;
+    gap:30px;
+    margin:15px 0;
+}
+
+.roleGroup input{
+    width:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#2e7d32;
+    color:white;
+}
+
+button{
+    background:#2e7d32;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1b5e20;
+}
+
+th,td{
+    border:1px solid #ddd;
+    padding:10px;
+}
+
+#dashboard{
+    display:none;
+}
+
+#adminDashboard{
+    display:none;
+}
+
+</style>
+
+</head>
+
+<body>
+    <!-- LOGIN SCREEN -->
+<!-- EXECUTIVE COMMITTEE -->
+
+<div class="card">
+
+    <h2>VGN Pride De Villa Owners Association</h2>
+
+    <h3 style="text-align:center;color:#0d47a1;">
+        Executive Committee Members
+    </h3>
+
+    <div style="
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:30px;
+    ">
+
+        <div style="text-align:center;">
+            <img src="selvakumar.jpg.jpeg"
+     width="120"
+     height="150"
+     style="
+     border-radius:50%;
+     object-fit:cover;
+     border:3px solid #0d47a1;
+     box-shadow:0 4px 10px rgba(0,0,0,.3);">
+            <h4>Selvakumar P</h4>
+            <p><b>President</b></p>
+            <p>📞 9444424570</p>
+        </div>
+
+        <div style="text-align:center;">
+            <img src="manikandan.jpg.jpg"
+                 width="120"
+                 height="150"
+                 style="
+                 border-radius:50%;
+                 object-fit:cover;
+                border:3px solid #0d47a1;
+     box-shadow:0 4px 10px rgba(0,0,0,.3);">
+            <h4>Manikandan Prabhu</h4>
+            <p><b>Secretary</b></p>
+            <p>📞 8883593698</p>
+        </div>
+
+        <div style="text-align:center;">
+            <img src="dhivya.jpg.jpg"
+                 width="120"
+                 height="150"
+                 style="
+                 border-radius:50%;
+                 object-fit:cover;
+                 border:3px solid #0d47a1;">
+            <h4>Dhivya</h4>
+            <p><b>Treasurer</b></p>
+            <p>📞 9952288099</p>
+        </div>
+
+        <div style="text-align:center;">
+            <img src="arunkumar.jpg.jpg"
+                 width="120"
+                 height="150"
+                 style="
+                 border-radius:50%;
+                 object-fit:cover;
+                 border:3px solid #0d47a1;">
+            <h4>Arunkumar</h4>
+            <p><b>Committee Member</b></p>
+            <p>📞 9176663770</p>
+        </div>
+
+        <div style="text-align:center;">
+            <img src="sujitha.jpg.jpg"
+                 width="120"
+                 height="150"
+                 style="
+                 border-radius:50%;
+                 object-fit:cover;
+                 border:3px solid #0d47a1;">
+            <h4>Sujitha</h4>
+            <p><b>Committee Member</b></p>
+            <p>📞 9995831981</p>
+        </div>
+
+    </div>
+
+</div>
+<div id="loginDiv" class="card">
+
+    <label><b>Login As</b></label>
+
+    <div class="roleGroup">
+
+        <label>
+            <input type="radio"
+                   name="role"
+                   value="owner"
+                   checked>
+            Villa Owner
+        </label>
+
+        <label>
+            <input type="radio"
+                   name="role"
+                   value="admin">
+            Admin
+        </label>
+
+    </div>
+
+    <div id="ownerFields">
+
+        <input
+            type="text"
+            id="villaNo"
+            placeholder="Villa Number">
+
+        <input
+            type="text"
+            id="mobileNo"
+            placeholder="Mobile Number">
+
+    </div>
+
+    <div id="adminFields" style="display:none;">
+
+        <input
+            type="text"
+            id="adminUser"
+            placeholder="Admin Username">
+
+        <input
+            type="password"
+            id="adminPassword"
+            placeholder="Admin Password">
+
+    </div>
+
+    <button onclick="loginPortal()">
+        Login
+      
+    </button>
+
+</div>
+
+<!-- ADMIN DASHBOARD -->
+
+<div id="adminDashboard" class="card">
+
+    <h2>Admin Dashboard</h2>
+
+    <label>Total UDS Villa Expense</label>
+
+    <input
+        type="number"
+        id="totalBaseUdsInput"
+        value="26000">
+
+    <label>Total Common Expense</label>
+
+    <input
+        type="number"
+        id="totalBaseInput"
+        value="138534">
+
+        <label>Total BUA Expense</label>
+
+<input
+    type="number"
+    id="totalBuaInput"
+    readonly>
+
+    <button onclick="saveAdminValues()">
+        Save Settings
+    </button>
+
+    <button
+    onclick="adminLogout()"
+    class="topRightLogout">
+    Sign Out
+</button>
+
+    </button>
+    <br><br>
+
+<button onclick="showVotingResults()">
+    View Voting Results
+</button>
+<button onclick="showPayments()">
+    View Payment Report
+</button>
+
+<br><br>
+
+<div id="paymentResults"></div>
+<h3>Voting Control</h3>
+
+<label>Voting End Date & Time</label>
+
+<input
+    type="datetime-local"
+    id="votingEndDate">
+
+<button onclick="saveVotingSettings()">
+    Save Voting End Time
+</button>
+
+<button onclick="enableVoting()">
+    Enable Voting
+</button>
+
+<button onclick="disableVoting()">
+    Disable Voting
+</button>
+
+<button onclick="clearAllVotes()"
+        style="background:red;">
+    Clear All Votes
+</button>
+
+<br><br>
+
+<div id="voteResults"></div>
+
+    <br><br>
+
+    <h3>Villa Master Details</h3>
+
+<div style="overflow-x:auto;">
+
+<table style="min-width:1400px;">
+
+<tr>
+    <th>Villa</th>
+    <th>Mobile No</th>
+    <th>Carpet</th>
+    <th>Plinth</th>
+    <th>Saleable</th>
+    <th>Plot</th>
+    <th>UDS</th>
+    <th>Total Area</th>
+    <th>FSM Total</th>
+    <th>BUA Total</th>
+    <th>Action</th>
+</tr>
+
+<tbody id="villaOwnerTable">
+</tbody>
+
+</table>
+
+</div>
+ </div>
+
+<!-- VILLA OWNER DASHBOARD -->
+
+<div id="dashboard" class="card">
+   
+
+    <h2>Villa Area Details</h2>
+    
+</h2>
+
+    <table>
+
+        <tr>
+            <th>Villa</th>
+            <th>Carpet Area</th>
+            <th>Plinth Area</th>
+            <th>Saleable Area</th>
+            <th>Plot Area</th>
+            <th>UDS</th>
+            <th>Total Area</th>
+        </tr>
+
+        <tr>
+            <td id="villa"></td>
+            <td id="carpet"></td>
+            <td id="plinth"></td>
+            <td id="saleable"></td>
+            <td id="plot"></td>
+            <td id="uds"></td>
+            <td id="total"></td>
+        </tr>
+
+    </table>
+
+    <br>
+
+    <h2>Cost Calculations</h2>
+
+<div style="display:flex;gap:20px;align-items:flex-start;">
+
+    <!-- BUA TABLE -->
+
+    <table style="width:50%;">
+
+        <tr>
+            <th colspan="2">
+                BUA Calculation
+            </th>
+        </tr>
+
+        <tr>
+            <td>Total Saleable Area</td>
+            <td id="totalSaleableArea"></td>
+        </tr>
+
+        <tr>
+            <td>Total BUA Expense</td>
+            <td id="totalBuaExpense"></td>
+        </tr>
+
+        <tr>
+            <td>BASE SA</td>
+            <td id="baseSa"></td>
+        </tr>
+
+        <tr>
+            <td><b>BUA Cost</b></td>
+            <td id="buaCost"></td>
+        </tr>
+
+    </table>
+
+    <!-- FSM TABLE -->
+
+    <table style="width:50%;">
+
+        <tr>
+            <th colspan="2">
+                FSM Calculation
+            </th>
+        </tr>
+
+        <tr>
+            <td>Total UDS Of 32 Villas</td>
+            <td id="aggregateUds"></td>
+        </tr>
+
+        <tr>
+            <td>Total UDS Villa Expense</td>
+            <td id="totalBaseUds"></td>
+        </tr>
+
+        <tr>
+            <td>BASE UDS</td>
+            <td id="baseUds"></td>
+        </tr>
+
+        <tr>
+            <td>UDS Cost</td>
+            <td id="udsCost"></td>
+        </tr>
+
+        <tr>
+            <td>Total Common Expense</td>
+            <td id="totalBase"></td>
+        </tr>
+
+        <tr>
+            <td>BASE CE</td>
+            <td id="baseCe"></td>
+        </tr>
+
+        <tr>
+            <td>Common Expense Cost</td>
+            <td id="commonExpense"></td>
+        </tr>
+
+        <tr>
+            <td><b>FSM Total</b></td>
+            <td id="fsm"></td>
+        </tr>
+
+    </table>
+
+</div>
+    <br>
+
+    <button
+        onclick="logout()"
+        class="logout">
+        Sign Out
+    </button>
+
+    <br><br>
+<hr>
+
+<h2>Payments</h2>
+
+<table>
+
+<tr>
+    <th>Payment Type</th>
+    <th>Amount</th>
+    <th>Status</th>
+    <th>Action</th>
+</tr>
+
+<tr>
+    <td>Maintenance Charge</td>
+    <td id="maintenanceAmount"></td>
+    <td id="maintenanceStatus">Pending</td>
+    <td>
+        <button onclick="payMaintenance()">
+            Pay Now
+        </button>
+    </td>
+</tr>
+
+<tr>
+    <td>Donation</td>
+    <td>
+        <input
+        type="number"
+        id="donationAmount"
+        placeholder="Enter Donation Amount">
+    </td>
+    <td id="donationStatus">Pending</td>
+    <td>
+        <button onclick="payDonation()">
+            Donate
+        </button>
+    </td>
+</tr>
+
+</table>
+
+<br>
+
+<button
+id="downloadReceiptBtn"
+style="display:none;background:green;"
+onclick="downloadReceipt()">
+Download Receipt
+</button>
+
+<hr>
+<h2>Owner Voting</h2>
+
+<div id="countdownBox"
+     style="
+     background:#fff3cd;
+     color:#856404;
+     padding:10px;
+     font-weight:bold;
+     text-align:center;
+     margin-bottom:10px;">
+</div>
+
+<div id="votingSection"
+     style="
+     border:1px solid #ddd;
+    padding:15px;
+    border-radius:10px;
+    background:#f9f9f9;">
+
+    <label>
+        <input type="radio"
+               name="vote"
+               value="FSM"
+               onchange="toggleOtherBox()">
+        FSM
+    </label>
+
+    <br><br>
+
+    <label>
+        <input type="radio"
+               name="vote"
+               value="BUA"
+               onchange="toggleOtherBox()">
+        BUA
+    </label>
+
+    <br><br>
+
+    <label>
+        <input type="radio"
+               name="vote"
+               value="Other"
+               onchange="toggleOtherBox()">
+        Other (Please Specify)
+    </label>
+
+    <br><br>
+
+    <textarea
+        id="otherReason"
+        style="
+            width:100%;
+            height:80px;
+            display:none;"
+        placeholder="Enter your comments">
+    </textarea>
+
+    <br><br>
+
+    <button onclick="submitVote()">
+        Submit Vote
+    </button>
+
+</div>
+
+<br><br>
+
+</div>
+<script>
+    /* ROLE SWITCHING */
+
+document.addEventListener("change", function(){
+
+    let role =
+    document.querySelector(
+        'input[name="role"]:checked'
+    ).value;
+
+    if(role === "admin"){
+
+        document.getElementById(
+            "ownerFields"
+        ).style.display = "none";
+
+        document.getElementById(
+            "adminFields"
+        ).style.display = "block";
+
+    }
+    else{
+
+        document.getElementById(
+            "ownerFields"
+        ).style.display = "block";
+
+        document.getElementById(
+            "adminFields"
+        ).style.display = "none";
+
+    }
+
+});
+
+/* LOGIN BUTTON */
+
+function loginPortal(){
+
+    let role =
+    document.querySelector(
+        'input[name="role"]:checked'
+    ).value;
+
+    if(role === "admin"){
+
+        adminLogin();
+
+    }
+    else{
+
+        login();
+
+    }
+
+}
+
+/* ADMIN LOGIN */
+
+function adminLogin(){
+
+    let user =
+    document.getElementById(
+        "adminUser"
+    ).value;
+
+    let pass =
+    document.getElementById(
+        "adminPassword"
+    ).value;
+
+    if(
+        user === "admin" &&
+        pass === "admin123"
+    ){
+
+        document.getElementById(
+            "loginDiv"
+        ).style.display = "none";
+
+        document.getElementById(
+            "adminDashboard"
+        ).style.display = "block";
+
+       loadVillaOwners();
+
+document.getElementById(
+    "totalBuaInput"
+).value =
+TOTAL_BASE_UDS + TOTAL_BASE;
+
+    }
+    else{
+
+        alert(
+            "Invalid Admin Login"
+        );
+
+    }
+
+}
+
+/* ADMIN LOGOUT */
+
+function adminLogout(){
+
+    document.getElementById(
+        "adminDashboard"
+    ).style.display = "none";
+
+    document.getElementById(
+        "loginDiv"
+    ).style.display = "block";
+
+    document.getElementById(
+        "adminUser"
+    ).value = "";
+
+    document.getElementById(
+        "adminPassword"
+    ).value = "";
+
+}
+
+/* OWNER LOGOUT */
+
+function logout(){
+
+    document.getElementById(
+        "dashboard"
+    ).style.display = "none";
+
+    document.getElementById(
+        "loginDiv"
+    ).style.display = "block";
+
+    document.getElementById(
+        "villaNo"
+    ).value = "";
+
+    document.getElementById(
+        "mobileNo"
+    ).value = "";
+
+}
+/* GLOBAL VALUES */
+
+const TOTAL_VILLAS = 32;
+
+const AGGREGATE_UDS = 13071;
+
+const TOTAL_SALEABLE_AREA = 55220;
+
+let TOTAL_BASE_UDS =
+Number(
+    localStorage.getItem(
+        "TOTAL_BASE_UDS"
+    )
+) || 26000;
+
+let TOTAL_BASE =
+Number(
+    localStorage.getItem(
+        "TOTAL_BASE"
+    )
+) || 138534;
+
+/* VILLA DATA */
+
+const villaData = {
+
+1:{mobile:"9840268420",carpet:1214,plinth:1573,saleable:1739,plot:1073,uds:441,total:1514},
+
+2:{mobile:"7418217465",carpet:1214,plinth:1549,saleable:1712,plot:856,uds:352,total:1208},
+
+3:{mobile:"",carpet:1214,plinth:1549,saleable:1712,plot:856,uds:352,total:1208},
+
+4:{mobile:"",carpet:1214,plinth:1573,saleable:1739,plot:871,uds:358,total:1229},
+
+5:{mobile:"9840978911",carpet:1214,plinth:1593,saleable:1739,plot:872,uds:359,total:1231},
+
+6:{mobile:"",carpet:1214,plinth:1549,saleable:1712,plot:857,uds:352,total:1209},
+
+7:{mobile:"",carpet:1214,plinth:1549,saleable:1712,plot:857,uds:352,total:1209},
+
+8:{mobile:"",carpet:1214,plinth:1549,saleable:1712,plot:857,uds:352,total:1209},
+
+9:{mobile:"",carpet:1214,plinth:1573,saleable:1739,plot:1154,uds:475,total:1629},
+
+10:{mobile:"",carpet:1194,plinth:1555,saleable:1719,plot:1175,uds:483,total:1658},
+
+11:{mobile:"9444424570",carpet:1194,plinth:1531,saleable:1692,plot:845,uds:347,total:1192},
+
+12:{mobile:"",carpet:1194,plinth:1531,saleable:1692,plot:845,uds:347,total:1192},
+
+13:{mobile:"",carpet:1194,plinth:1555,saleable:1719,plot:861,uds:354,total:1215},
+
+14:{mobile:"",carpet:1194,plinth:1555,saleable:1719,plot:861,uds:354,total:1215},
+
+15:{mobile:"",carpet:1194,plinth:1531,saleable:1692,plot:845,uds:347,total:1192},
+
+16:{mobile:"9445323523",carpet:1194,plinth:1555,saleable:1719,plot:861,uds:354,total:1215},
+
+17:{mobile:"",carpet:1214,plinth:1573,saleable:1739,plot:870,uds:358,total:1228},
+
+18:{mobile:"",carpet:1214,plinth:1549,saleable:1712,plot:856,uds:352,total:1208},
+
+19:{mobile:"",carpet:1214,plinth:1549,saleable:1712,plot:856,uds:352,total:1208},
+
+20:{mobile:"",carpet:1214,plinth:1573,saleable:1739,plot:870,uds:358,total:1228},
+
+21:{mobile:"",carpet:1214,plinth:1573,saleable:1739,plot:870,uds:358,total:1228},
+
+22:{mobile:"",carpet:1214,plinth:1549,saleable:1712,plot:856,uds:352,total:1208},
+
+23:{mobile:"",carpet:1214,plinth:1573,saleable:1739,plot:1324,uds:544,total:1868},
+
+24:{mobile:"",carpet:1194,plinth:1555,saleable:1719,plot:1826,uds:751,total:2577},
+
+25:{mobile:"",carpet:1194,plinth:1531,saleable:1692,plot:1158,uds:476,total:1634},
+
+26:{mobile:"",carpet:1194,plinth:1531,saleable:1692,plot:1142,uds:470,total:1612},
+
+27:{mobile:"",carpet:1194,plinth:1531,saleable:1692,plot:1127,uds:463,total:1590},
+
+28:{mobile:"",carpet:1194,plinth:1555,saleable:1719,plot:1136,uds:467,total:1603},
+
+29:{mobile:"",carpet:1194,plinth:1555,saleable:1719,plot:1122,uds:461,total:1583},
+
+30:{mobile:"",carpet:1194,plinth:1531,saleable:1692,plot:1085,uds:446,total:1531},
+
+31:{mobile:"",carpet:1194,plinth:1531,saleable:1692,plot:1072,uds:441,total:1513},
+
+32:{mobile:"",carpet:1214,plinth:1555,saleable:1719,plot:1077,uds:443,total:1520}
+
+};
+
+let savedData =
+localStorage.getItem("villaData");
+
+if(savedData){
+
+    Object.assign(
+        villaData,
+        JSON.parse(savedData)
+    );
+
+}
+function loadVillaOwners(){
+
+    let html = "";
+
+    let grandFSM = 0;
+    let grandBUA = 0;
+
+    for(let villaNo=1; villaNo<=32; villaNo++){
+
+        let villa = villaData[villaNo];
+
+        if(!villa) continue;
+
+        let BASE_UDS =
+        TOTAL_BASE_UDS / AGGREGATE_UDS;
+
+        let BASE_CE =
+        TOTAL_BASE / TOTAL_VILLAS;
+
+        let udsCost =
+        villa.uds * BASE_UDS;
+
+        let fsmTotal =
+        udsCost + BASE_CE;
+
+        let totalBUA =
+        TOTAL_BASE_UDS + TOTAL_BASE;
+
+        let BASE_SA =
+        totalBUA / TOTAL_SALEABLE_AREA;
+
+        let buaTotal =
+        villa.saleable * BASE_SA;
+
+        grandFSM += fsmTotal;
+        grandBUA += buaTotal;
+
+        html += `
+
+        <tr>
+
+            <td>${villaNo}</td>
+
+            <td>
+                <input
+                type="text"
+                id="mobile_${villaNo}"
+                value="${villa.mobile}"
+                style="width:120px;">
+            </td>
+
+            <td>${villa.carpet}</td>
+            <td>${villa.plinth}</td>
+            <td>${villa.saleable}</td>
+            <td>${villa.plot}</td>
+            <td>${villa.uds}</td>
+            <td>${villa.total}</td>
+
+            <td>
+                ₹${fsmTotal.toFixed(2)}
+            </td>
+
+            <td>
+                ₹${buaTotal.toFixed(2)}
+            </td>
+
+            <td>
+                <button
+                onclick="saveMobile(${villaNo})">
+                Save
+                </button>
+            </td>
+
+        </tr>
+
+        `;
+
+    }
+
+    html += `
+
+    <tr style="background:#f5f5f5;font-weight:bold;">
+
+        <td colspan="8">
+            Total
+        </td>
+
+        <td>
+            ₹${grandFSM.toFixed(2)}
+        </td>
+
+        <td>
+            ₹${grandBUA.toFixed(2)}
+        </td>
+
+        <td>
+        </td>
+
+    </tr>
+
+    `;
+
+    document.getElementById(
+        "villaOwnerTable"
+    ).innerHTML = html;
+
+}
+
+function saveMobile(villaNo){
+
+    let mobile =
+
+    document.getElementById(
+        `mobile_${villaNo}`
+    ).value;
+
+    villaData[villaNo].mobile =
+    mobile;
+
+    localStorage.setItem(
+        "villaData",
+        JSON.stringify(villaData)
+    );
+
+    alert(
+        "Mobile Saved Successfully"
+    );
+
+}
+
+function saveAdminValues(){
+
+    TOTAL_BASE_UDS = Number(
+        document.getElementById(
+            "totalBaseUdsInput"
+        ).value
+    );
+
+    TOTAL_BASE = Number(
+        document.getElementById(
+            "totalBaseInput"
+        ).value
+    );
+
+    document.getElementById(
+        "totalBuaInput"
+    ).value =
+    TOTAL_BASE_UDS + TOTAL_BASE;
+
+    localStorage.setItem(
+        "TOTAL_BASE_UDS",
+        TOTAL_BASE_UDS
+    );
+
+    localStorage.setItem(
+        "TOTAL_BASE",
+        TOTAL_BASE
+    );
+
+    loadVillaOwners();
+
+    alert(
+        "Settings Saved Successfully"
+    );
+}
+function login(){
+
+    let villaNo =
+    document.getElementById(
+        "villaNo"
+    ).value.trim();
+
+    let mobileNo =
+    document.getElementById(
+        "mobileNo"
+    ).value.trim();
+
+    let villa =
+    villaData[villaNo];
+
+    if(!villa){
+
+        alert(
+            "Invalid Villa Number"
+        );
+
+        return;
+
+    }
+
+    if(
+        villa.mobile !== "" &&
+        villa.mobile !== mobileNo
+    ){
+
+        alert(
+            "Invalid Mobile Number"
+        );
+
+        return;
+
+    }
+
+    let BASE_UDS = Number(
+
+        (
+            TOTAL_BASE_UDS /
+            AGGREGATE_UDS
+
+        ).toFixed(2)
+
+    );
+
+    let BASE_CE = Math.round(
+
+        TOTAL_BASE /
+        TOTAL_VILLAS
+
+    );
+
+    let TOTAL_BUA =
+
+    TOTAL_BASE_UDS +
+    TOTAL_BASE;
+
+    let udsCost = (
+
+        villa.uds *
+        BASE_UDS
+
+    ).toFixed(2);
+
+    let fsm = (
+
+        parseFloat(udsCost) +
+        BASE_CE
+
+    ).toFixed(2);
+
+    let BASE_SA = (
+
+    TOTAL_BUA /
+    TOTAL_SALEABLE_AREA
+
+).toFixed(4);
+
+let buaCost = (
+
+    villa.saleable *
+    BASE_SA
+
+).toFixed(2);
+
+    document.getElementById(
+        "villa"
+    ).innerHTML = villaNo;
+
+    document.getElementById(
+        "carpet"
+    ).innerHTML = villa.carpet;
+
+    document.getElementById(
+        "plinth"
+    ).innerHTML = villa.plinth;
+
+    document.getElementById(
+        "saleable"
+    ).innerHTML = villa.saleable;
+
+    document.getElementById(
+        "plot"
+    ).innerHTML = villa.plot;
+
+    document.getElementById(
+        "uds"
+    ).innerHTML = villa.uds;
+
+    document.getElementById(
+        "total"
+    ).innerHTML = villa.total;
+
+    document.getElementById(
+        "aggregateUds"
+    ).innerHTML = AGGREGATE_UDS;
+
+    document.getElementById(
+        "totalBaseUds"
+    ).innerHTML =
+    "₹ " + TOTAL_BASE_UDS;
+
+    document.getElementById(
+        "baseUds"
+    ).innerHTML =
+    BASE_UDS;
+
+    document.getElementById(
+        "udsCost"
+    ).innerHTML =
+    "₹ " + udsCost;
+
+    document.getElementById(
+        "totalBase"
+    ).innerHTML =
+    "₹ " + TOTAL_BASE;
+
+    document.getElementById(
+        "baseCe"
+    ).innerHTML =
+    "₹ " + BASE_CE;
+
+    document.getElementById(
+        "commonExpense"
+    ).innerHTML =
+    "₹ " + BASE_CE;
+
+    document.getElementById(
+        "fsm"
+    ).innerHTML =
+    "₹ " + fsm;
+    document.getElementById(
+    "maintenanceAmount"
+).innerHTML =
+"₹ " + fsm;
+
+    document.getElementById(
+    "totalSaleableArea"
+).innerHTML =
+TOTAL_SALEABLE_AREA;
+
+document.getElementById(
+    "totalBuaExpense"
+).innerHTML =
+"₹ " + TOTAL_BUA;
+
+document.getElementById(
+    "baseSa"
+).innerHTML =
+BASE_SA;
+
+document.getElementById(
+    "buaCost"
+).innerHTML =
+"₹ " + buaCost;
+
+    document.getElementById(
+        "loginDiv"
+    ).style.display = "none";
+if(
+localStorage.getItem(
+"votingEnabled"
+) === "NO"
+){
+
+document.getElementById(
+"votingSection"
+).style.display =
+"none";
+
+document.getElementById(
+"countdownBox"
+).innerHTML =
+"Voting Closed By Admin";
+
+}
+else{
+
+document.getElementById(
+"votingSection"
+).style.display =
+"block";
+
+}
+    document.getElementById(
+        "dashboard"
+    ).style.display = "block";
+
+}
+function toggleOtherBox(){
+
+    let selected =
+    document.querySelector(
+        'input[name="vote"]:checked'
+    );
+
+    if(
+        selected &&
+        selected.value === "Other"
+    ){
+        document.getElementById(
+            "otherReason"
+        ).style.display = "block";
+    }
+    else{
+        document.getElementById(
+            "otherReason"
+        ).style.display = "none";
+    }
+
+}
+
+function submitVote(){
+
+    let selectedVote =
+    document.querySelector(
+        'input[name="vote"]:checked'
+    );
+
+    if(!selectedVote){
+        alert(
+            "Please select a vote option"
+        );
+        return;
+    }
+
+    let villaNo =
+    document.getElementById(
+        "villa"
+    ).innerHTML;
+
+    let vote =
+    selectedVote.value;
+
+    let remarks =
+    document.getElementById(
+        "otherReason"
+    ).value;
+
+    localStorage.setItem(
+        "Vote_" + villaNo,
+        JSON.stringify({
+            villa:villaNo,
+            owner:"Villa " + villaNo,
+            vote:vote,
+            remarks:remarks
+        })
+    );
+
+    alert(
+        "Vote Submitted Successfully"
+    );
+}
+function showVotingResults(){
+
+    let html = `
+    <h3>Voting Results</h3>
+
+    <table>
+        <tr>
+            <th>Villa</th>
+            <th>Owner</th>
+            <th>Vote</th>
+            <th>Remarks</th>
+            <th>Action</th>
+        </tr>
+    `;
+
+    let fsmCount = 0;
+    let buaCount = 0;
+    let otherCount = 0;
+
+    for(let i=1;i<=32;i++){
+
+        let voteData =
+        localStorage.getItem(
+            "Vote_" + i
+        );
+
+        if(voteData){
+
+            let data =
+            JSON.parse(voteData);
+
+            if(data.vote === "FSM"){
+                fsmCount++;
+            }
+            else if(data.vote === "BUA"){
+                buaCount++;
+            }
+            else{
+                otherCount++;
+            }
+
+            html += `
+            <tr>
+                <td>${data.villa}</td>
+                <td>${data.owner || "-"}</td>
+                <td>${data.vote}</td>
+                <td>${data.remarks || "-"}</td>
+                <td>
+                    <button
+                    style="background:red;color:white;"
+                    onclick="deleteVote('${data.villa}')">
+                    Delete
+                    </button>
+                </td>
+            </tr>
+            `;
+        }
+    }
+
+    html += `
+    </table>
+
+    <br>
+
+    <h3>Vote Summary</h3>
+
+    <table>
+        <tr>
+            <th>Vote Type</th>
+            <th>Count</th>
+        </tr>
+
+        <tr>
+            <td>FSM</td>
+            <td>${fsmCount}</td>
+        </tr>
+
+        <tr>
+            <td>BUA</td>
+            <td>${buaCount}</td>
+        </tr>
+
+        <tr>
+            <td>Other</td>
+            <td>${otherCount}</td>
+        </tr>
+    </table>
+    `;
+
+    document.getElementById(
+        "voteResults"
+    ).innerHTML = html;
+}
+function deleteVote(villaNo){
+
+    if(
+        !confirm(
+            "Delete vote for Villa "
+            + villaNo + " ?"
+        )
+    ){
+        return;
+    }
+
+    localStorage.removeItem(
+        "Vote_" + villaNo
+    );
+
+    showVotingResults();
+
+}
+
+    // all your voting code
+
+function deleteVote(villaNo){
+
+    if(
+        !confirm(
+            "Delete vote for Villa " +
+            villaNo + " ?"
+        )
+    ){
+        return;
+    }
+
+    localStorage.removeItem(
+        "Vote_" + villaNo
+    );
+
+    alert(
+        "Vote deleted successfully"
+    );
+
+    showVotingResults();
+
+}
+function saveVotingSettings(){
+
+    let endDate =
+    document.getElementById(
+        "votingEndDate"
+    ).value;
+
+    localStorage.setItem(
+        "votingEndDate",
+        endDate
+    );
+
+    alert(
+        "Voting End Date Saved"
+    );
+}
+
+function enableVoting(){
+
+    localStorage.setItem(
+        "votingEnabled",
+        "YES"
+    );
+
+    alert(
+        "Voting Enabled"
+    );
+}
+
+function disableVoting(){
+
+    localStorage.setItem(
+        "votingEnabled",
+        "NO"
+    );
+
+    alert(
+        "Voting Disabled"
+    );
+}
+
+function clearAllVotes(){
+
+    if(
+        !confirm(
+            "Delete all votes?"
+        )
+    ){
+        return;
+    }
+
+    for(
+        let i=1;
+        i<=32;
+        i++
+    ){
+
+        localStorage.removeItem(
+            "Vote_"+i
+        );
+    }
+
+    alert(
+        "All votes cleared"
+    );
+
+}
+
+setInterval(function(){
+
+    let endDate =
+    localStorage.getItem(
+        "votingEndDate"
+    );
+
+    if(!endDate){
+        return;
+    }
+
+    let diff =
+        new Date(endDate)
+        -
+        new Date();
+
+    if(diff <= 0){
+
+        document.getElementById(
+            "countdownBox"
+        ).innerHTML =
+        "Voting Closed";
+
+        document.getElementById(
+            "votingSection"
+        ).style.display =
+        "none";
+
+        return;
+    }
+
+    let days =
+    Math.floor(
+        diff /
+        (1000*60*60*24)
+    );
+
+    let hours =
+    Math.floor(
+        (
+            diff %
+            (1000*60*60*24)
+        ) /
+        (1000*60*60)
+    );
+
+    let mins =
+    Math.floor(
+        (
+            diff %
+            (1000*60*60)
+        ) /
+        (1000*60)
+    );
+
+   document.getElementById(
+    "countdownBox"
+).innerHTML =
+"📢 IMPORTANT: Voting closes in "
++ days + " Days "
++ hours + " Hours "
++ mins + " Minutes. Please cast your vote before the deadline.";
+
+},1000);
+let lastReceipt = {};
+
+function payMaintenance(){
+
+    let amount =
+    parseFloat(
+    document.getElementById(
+        "maintenanceAmount"
+    ).innerText.replace("₹","")
+    );
+
+    openRazorpay(
+        amount,
+        "Maintenance",
+        "maintenanceStatus"
+    );
+
+}
+
+function payDonation(){
+
+    let amount =
+    Number(
+    document.getElementById(
+        "donationAmount"
+    ).value
+    );
+
+    if(amount <= 0){
+
+        alert(
+            "Enter Donation Amount"
+        );
+
+        return;
+    }
+
+    openRazorpay(
+        amount,
+        "Donation",
+        "donationStatus"
+    );
+
+}
+function openRazorpay(
+    amount,
+    paymentType,
+    statusId
+){
+
+    let options = {
+
+        key:"rzp_test_xxxxxxxxxxxx",
+
+        amount: amount * 100,
+
+        currency:"INR",
+
+        name:
+        "VGN Pride De Villa Owners Association",
+
+        description:
+        paymentType,
+
+        handler:function(response){
+
+            document.getElementById(
+                statusId
+            ).innerHTML =
+            "✅ Paid";
+
+            lastReceipt = {
+
+                villa:
+                document.getElementById(
+                    "villa"
+                ).innerHTML,
+
+                amount:amount,
+
+                paymentType:
+                paymentType,
+
+                txn:
+                response
+                .razorpay_payment_id,
+
+                date:
+                new Date()
+                .toLocaleString()
+            };
+
+            document.getElementById(
+                "downloadReceiptBtn"
+            ).style.display =
+            "inline-block";
+
+            alert(
+                paymentType +
+                " Payment Successful"
+            );
+
+        }
+
+    };
+
+    let rzp =
+    new Razorpay(options);
+
+    rzp.open();
+let payments =
+JSON.parse(
+localStorage.getItem("payments")
+) || [];
+
+payments.push({
+
+    villa:
+    document.getElementById(
+        "villa"
+    ).innerHTML,
+
+    paymentType:
+    paymentType,
+
+    amount:
+    amount,
+
+    transactionId:
+    response.razorpay_payment_id,
+
+    status:
+    "Paid",
+
+    date:
+    new Date().toLocaleString()
+
+});
+
+localStorage.setItem(
+    "payments",
+    JSON.stringify(payments)
+);
+
+document.getElementById(
+    statusId
+).innerHTML =
+"✅ Paid";
+}
+function downloadReceipt(){
+
+    let receipt = `
+VGN Pride De Villa Owners Association
+
+Villa No :
+${lastReceipt.villa}
+
+Payment Type :
+${lastReceipt.paymentType}
+
+Amount :
+₹${lastReceipt.amount}
+
+Transaction ID :
+${lastReceipt.txn}
+
+Date :
+${lastReceipt.date}
+
+Status : PAID
+`;
+
+    let blob =
+    new Blob(
+        [receipt],
+        {type:"text/plain"}
+    );
+
+    let link =
+    document.createElement("a");
+
+    link.href =
+    URL.createObjectURL(blob);
+
+    link.download =
+    "Receipt_Villa_" +
+    lastReceipt.villa +
+    ".txt";
+
+    link.click();
+
+}
+function showPayments(){
+
+    let payments =
+    JSON.parse(
+        localStorage.getItem(
+            "payments"
+        )
+    ) || [];
+
+    let html = `
+
+    <h3>
+    Payment Report
+    </h3>
+
+    <table>
+
+    <tr>
+
+        <th>Villa</th>
+
+        <th>Payment Type</th>
+
+        <th>Amount</th>
+
+        <th>Status</th>
+
+        <th>Transaction ID</th>
+
+        <th>Date</th>
+
+    </tr>
+
+    `;
+
+    let grandTotal = 0;
+
+    payments.forEach(p => {
+
+        grandTotal +=
+        Number(p.amount);
+
+        html += `
+
+        <tr>
+
+            <td>${p.villa}</td>
+
+            <td>${p.paymentType}</td>
+
+            <td>₹${p.amount}</td>
+
+            <td>${p.status}</td>
+
+            <td>${p.transactionId}</td>
+
+            <td>${p.date}</td>
+
+        </tr>
+
+        `;
+
+    });
+
+    html += `
+
+    <tr
+    style="
+    background:#f5f5f5;
+    font-weight:bold;">
+
+        <td colspan="2">
+        Total Collection
+        </td>
+
+        <td>
+        ₹${grandTotal}
+        </td>
+
+        <td colspan="3">
+        -
+        </td>
+
+    </tr>
+
+    </table>
+
+    `;
+
+    document.getElementById(
+        "paymentResults"
+    ).innerHTML = html;
+
+}
+
+</script>
+
+</body>
+
+</html>
+
+
+
+
+
